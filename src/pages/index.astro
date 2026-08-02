@@ -1,4 +1,6 @@
 ---
+import Layout from "../layouts/Layout.astro";
+
 const skills = [
   "SQL",
   "Tableau",
@@ -8,46 +10,33 @@ const skills = [
 ];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Bones to Bytes | Clinical Informatics Journey</title>
-    <meta
-      name="description"
-      content="The professional portfolio of a healthcare professional transitioning into Clinical Informatics through data, technology, and IT."
-    />
-  </head>
+<Layout title="Bones to Bytes | Clinical Informatics">
 
-  <body>
-    <main>
-      <section>
-        <h1>Bones to Bytes</h1>
+<section>
+  <h1>Bones to Bytes</h1>
 
-        <h2>
-          From Orthopedic Trauma Surgery to Healthcare Informatics
-        </h2>
+  <h2>
+    From Orthopedic Trauma Surgery to Clinical Informatics
+  </h2>
 
-        <p>
-          I am building the bridge between healthcare experience,
-          data, and technology. This site documents my journey
-          developing skills in healthcare analytics, IT operations,
-          and clinical informatics.
-        </p>
+  <p>
+    I am building the bridge between healthcare,
+    data, and technology.
+  </p>
 
-        <h3>Currently Building Skills In</h3>
+  <p>
+    This site documents my journey developing skills
+    in healthcare analytics, IT operations, and
+    clinical informatics.
+  </p>
 
-        <ul>
-          {skills.map((skill) => (
-            <li>{skill}</li>
-          ))}
-        </ul>
+  <h3>Currently Building Skills In</h3>
 
-        <div>
-          <a href="/projects">View Projects</a>
-          <a href="/journal">Learning Journal</a>
-        </div>
-      </section>
-    </main>
-  </body>
-</html>
+  <ul>
+    {skills.map(skill => (
+      <li>{skill}</li>
+    ))}
+  </ul>
+</section>
+
+</Layout>
