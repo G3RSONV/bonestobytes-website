@@ -1,42 +1,37 @@
----
-import Layout from "../layouts/Layout.astro";
+<section class="hero">
 
-const skills = [
-  "SQL",
-  "Tableau",
-  "ITIL v4",
-  "Homelab Engineering",
-  "Healthcare Data Analytics",
-];
----
+  <p>
+    Healthcare + Technology
+  </p>
 
-<Layout title="Bones to Bytes | Clinical Informatics">
-
-<section>
-  <h1>Bones to Bytes</h1>
+  <h1>
+    Bones to Bytes
+  </h1>
 
   <h2>
     From Orthopedic Trauma Surgery to Clinical Informatics
   </h2>
 
   <p>
-    I am building the bridge between healthcare,
-    data, and technology.
+    I am building the bridge between clinical expertise,
+    healthcare data, and information technology.
   </p>
 
   <p>
-    This site documents my journey developing skills
-    in healthcare analytics, IT operations, and
-    clinical informatics.
+    This portfolio documents my journey developing skills
+    in SQL, Tableau, IT service management, and hands-on
+    infrastructure while preparing for a career in
+    Clinical Informatics.
   </p>
 
-  <h3>Currently Building Skills In</h3>
+  <h3>
+    Current Focus
+  </h3>
 
   <ul>
     {skills.map(skill => (
       <li>{skill}</li>
     ))}
   </ul>
-</section>
 
-</Layout>
+</section>
