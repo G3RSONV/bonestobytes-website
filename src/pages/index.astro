@@ -1,17 +1,53 @@
 ---
-
+const skills = [
+  "SQL",
+  "Tableau",
+  "ITIL v4",
+  "Homelab Engineering",
+  "Healthcare Data Analytics",
+];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Bones to Bytes | Clinical Informatics Journey</title>
+    <meta
+      name="description"
+      content="The professional portfolio of a healthcare professional transitioning into Clinical Informatics through data, technology, and IT."
+    />
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <h1>Bones to Bytes</h1>
+
+        <h2>
+          From Orthopedic Trauma Surgery to Healthcare Informatics
+        </h2>
+
+        <p>
+          I am building the bridge between healthcare experience,
+          data, and technology. This site documents my journey
+          developing skills in healthcare analytics, IT operations,
+          and clinical informatics.
+        </p>
+
+        <h3>Currently Building Skills In</h3>
+
+        <ul>
+          {skills.map((skill) => (
+            <li>{skill}</li>
+          ))}
+        </ul>
+
+        <div>
+          <a href="/projects">View Projects</a>
+          <a href="/journal">Learning Journal</a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
