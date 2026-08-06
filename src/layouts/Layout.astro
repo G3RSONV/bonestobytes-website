@@ -52,7 +52,13 @@ const currentPath = Astro.url.pathname;
           >
             Journey
           </a>
-
+          
+          <a
+          href="/about"
+          class={currentPath.startsWith("/about") ? "active" : ""}
+        >
+          About
+        </a>
         </div>
 
       </nav>
