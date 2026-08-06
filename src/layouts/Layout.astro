@@ -6,7 +6,12 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Bones to Bytes - Clinical Informatics Journey" } = Astro.props;
+const {
+  title,
+  description = "Bones to Bytes - Healthcare • Data • Technology",
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -17,23 +22,39 @@ const { title, description = "Bones to Bytes - Clinical Informatics Journey" } =
 
     <title>{title}</title>
 
-    <meta 
-      name="description" 
-      content={description} 
+    <meta
+      name="description"
+      content={description}
     />
   </head>
 
   <body>
+
     <header>
-      <nav>
+      <nav aria-label="Main navigation">
+
         <a class="nav-brand" href="/">
-            Bones to Bytes
+          Bones to Bytes
         </a>
 
         <div class="nav-links">
-        <a href="/projects">Projects</a>
-        <a href="/journal">Journal</a>
+
+          <a
+            href="/projects"
+            class={currentPath.startsWith("/projects") ? "active" : ""}
+          >
+            Projects
+          </a>
+
+          <a
+            href="/journal"
+            class={currentPath.startsWith("/journal") ? "active" : ""}
+          >
+            Journal
+          </a>
+
         </div>
+
       </nav>
     </header>
 
@@ -46,5 +67,6 @@ const { title, description = "Bones to Bytes - Clinical Informatics Journey" } =
         © {new Date().getFullYear()} Bones to Bytes
       </p>
     </footer>
+
   </body>
 </html>
