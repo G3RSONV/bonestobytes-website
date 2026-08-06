@@ -2,51 +2,59 @@
 import Layout from "../layouts/Layout.astro";
 
 const skills = [
-  "SQL",
-  "Tableau",
-  "ITIL v4",
-  "Homelab Engineering",
-  "Healthcare Data Analytics",
+  "Data analytics",
+  "Data Visualization",
+  "Service Management",
+  "Linux",
+  "Homelab"
 ];
 ---
 
-<Layout title="Bones to Bytes | Healtcare IT">
+<Layout title="Bones to Bytes | Healthcare IT">
 
 <section class="hero">
 
-  <p>
-    Healthcare + Technology
-  </p>
+  <div class="hero-content">
 
-  <h1>
-    Bones to Bytes
-  </h1>
+    <p class="hero-tag">
+      Healthcare • Data • Technology
+    </p>
 
-  <h2>
-    From Orthopedic Trauma Surgery to Healthcare IT
-  </h2>
+    <h1>
+      Bones to Bytes
+    </h1>
 
-  <p>
-    I am building the bridge between clinical expertise,
-    Healthcare data, and Information Technology.
-  </p>
+    <h2>
+      From Orthopedic Trauma Surgery to Healthcare Informatics
+    </h2>
 
-  <p>
-    This portfolio documents my journey developing skills
-    in Data manipulation, visualization, service management, and hands-on
-    infrastructure while preparing for a career in
-    Healthcare Informatics.
-  </p>
+    <p>
+      Bridging clinical expertise, healthcare data, and modern information technology.
+    </p>
 
-  <h3>
-    Current Focus
-  </h3>
+    <p>
+      This portfolio documents my transition into Healthcare IT through hands-on
+      projects in SQL, Tableau, Linux, IT service management, and homelab
+      engineering. My goal is to combine real-world clinical experience with
+      technical skills to help improve healthcare systems and patient outcomes.
+    </p>
 
-  <ul>
-    {skills.map(skill => (
-      <li>{skill}</li>
-    ))}
-  </ul>
+    <h3>Current Focus</h3>
+
+    <div class="skills">
+      {skills.map((skill) => (
+        <span class="skill">{skill}</span>
+      ))}
+    </div>
+
+  </div>
+
+  <div class="hero-image">
+    <img
+      src="/images/hero.png"
+      alt="Bones to Bytes hero illustration"
+    />
+  </div>
 
 </section>
 
