@@ -18,21 +18,21 @@ import Layout from "../layouts/Layout.astro";
         <span>Linux</span>
       </p>
     </div>
-    <a class="scroll-cue" href="#projects">
+    <a class="scroll-cue" href="#about">
       <span>Scroll to explore</span>
       <span aria-hidden="true">↓</span>
     </a>
   </section>
 
-  <section id="projects" class="panel panel-projects" aria-labelledby="projects-title">
+  <section id="about" class="panel panel-about" aria-labelledby="about-title">
     <div class="panel-content">
-      <p class="section-label">01 / Projects</p>
-      <h2 id="projects-title">Healthcare, data<br />&amp; technology.</h2>
+      <p class="section-label">01 / About</p>
+      <h2 id="about-title">From bones<br />to bytes.</h2>
       <p class="section-description">
-        Building practical skills in SQL and healthcare data analysis,
-        with interests in Linux, infrastructure, and automation.
+        I'm Gerson, a former orthopaedic trauma surgeon connecting clinical
+        experience with healthcare data, information systems, and technology.
       </p>
-      <a class="panel-link" href="/projects/">Explore projects <span aria-hidden="true">→</span></a>
+      <a class="panel-link" href="/about/">More about me <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
@@ -48,32 +48,40 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section id="about" class="panel panel-about" aria-labelledby="about-title">
+  <section id="projects" class="panel panel-projects" aria-labelledby="projects-title">
     <div class="panel-content">
-      <p class="section-label">03 / About</p>
-      <h2 id="about-title">From bones<br />to bytes.</h2>
+      <p class="section-label">03 / Projects &amp; Homelab</p>
+      <h2 id="projects-title">Projects &amp;<br />homelab.</h2>
       <p class="section-description">
-        I'm Gerson, a former orthopaedic trauma surgeon connecting clinical
-        experience with healthcare data, information systems, and technology.
+        Exploring healthcare data with SQL, alongside hands-on learning in Linux,
+        virtualization, networking, containers, and homelab infrastructure.
       </p>
-      <a class="panel-link" href="/about/">More about me <span aria-hidden="true">→</span></a>
+      <a class="panel-link" href="/projects/">Explore projects <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section id="contact" class="panel panel-contact" aria-labelledby="contact-title">
+    <div class="panel-content">
+      <p class="section-label">04 / Contact</p>
+      <h2 id="contact-title">Let's connect.</h2>
+      <p class="section-description">
+        Healthcare, technology, or a shared interest in Linux —
+        I'd be glad to connect.
+      </p>
+      <div class="contact-links">
+        <a class="panel-link" href="https://www.linkedin.com/in/fracturefixed/">LinkedIn</a>
+        <a class="panel-link" href="https://github.com/G3RSONV">GitHub</a>
+        <a class="panel-link" href="mailto:g3rsonv@proton.me">Email</a>
+      </div>
       <a class="back-to-top" href="#intro">Back to top ↑</a>
     </div>
   </section>
+
 </Layout>
 
 <style>
   :global(html.homepage) {
     scroll-snap-type: y proximity;
-  }
-
-  :global(.homepage header) {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    border-bottom: 0;
-    backdrop-filter: none;
   }
 
   :global(.homepage main) {
@@ -97,15 +105,19 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .panel-projects {
-    background: #0c1a2a;
+    background: #172d42;
   }
 
   .panel-journey {
     background: #112336;
   }
 
+  .panel-contact {
+    background: #1d374d;
+  }
+
   .panel-about {
-    background: #172d42;
+    background: #0c1a2a;
   }
 
   .panel-content {
@@ -144,6 +156,13 @@ import Layout from "../layouts/Layout.astro";
     display: inline-block;
     padding: .5rem;
     font-weight: 600;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem 1.5rem;
   }
 
   .panel-link span {
