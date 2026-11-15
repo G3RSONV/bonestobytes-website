@@ -84,66 +84,47 @@ main {
   padding: 2rem;
 }
 
-/* ---------- HERO ---------- */
+/* ---------- Homepage introduction ---------- */
 
 .hero {
   display: grid;
-  align-items: center;
-
-  min-height: 80vh;
+  place-items: center;
+  min-height: 75svh;
+  padding: 3rem 0;
+  text-align: center;
 }
 
-.hero-tag {
-  color: var(--accent);
-
-  font-size: .9rem;
-  font-weight: 700;
-
-  text-transform: uppercase;
-  letter-spacing: .15em;
+.hero-content {
+  width: 100%;
 }
 
 .hero h1 {
-  font-size: 4.25rem;
-  line-height: 1.05;
-  margin: .5rem 0;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.1;
+  text-wrap: balance;
 }
 
-.hero h2 {
-  color: var(--muted);
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-}
-
-.hero p {
-  color: var(--muted);
-  font-size: 1.15rem;
-  max-width: 650px;
-}
-
-/* ---------- Skills ---------- */
-
-.skills {
+.hero-tagline {
   display: flex;
   flex-wrap: wrap;
-  gap: .75rem;
-
-  margin-top: 2rem;
+  justify-content: center;
+  align-items: baseline;
+  gap: .25rem .65rem;
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
-.skill {
-  background: rgba(88,197,255,.08);
+.hero-tagline span {
+  white-space: nowrap;
+}
 
-  border: 1px solid var(--border);
-
+.hero-tagline .separator {
   color: var(--accent);
-
-  border-radius: 999px;
-
-  padding: .65rem 1rem;
-
-  font-size: .95rem;
 }
 
 /* ---------- Footer ---------- */
@@ -160,30 +141,6 @@ footer {
 
 /* ---------- Mobile ---------- */
 
-@media (max-width: 900px) {
-
-  .hero {
-
-    grid-template-columns: 1fr;
-
-    gap: 2rem;
-
-  }
-
-  .hero h1 {
-
-    font-size: 3rem;
-
-  }
-
-  .hero h2 {
-
-    font-size: 1.5rem;
-
-  }
-
-}
-
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -199,5 +156,17 @@ footer {
 
   main {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-tagline {
+    flex-direction: column;
+    align-items: center;
+    gap: .35rem;
+  }
+
+  .hero-tagline .separator {
+    display: none;
   }
 }

@@ -1,47 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const skills = [
-  "Data analytics",
-  "Data Visualization",
-  "Service Management",
-  "Linux",
-  "Homelab"
-];
 ---
 
-<Layout title="Bones to Bytes | Healthcare IT">
-
-<section class="hero">
-
-  <div class="hero-content">
-
-    <p class="hero-tag">
-      Healthcare • Data • Technology
-    </p>
-
-    <h1>
-      Bones to Bytes
-    </h1>
-
-    <h2>
-      From Orthopedic Trauma Surgery to Healthcare Informatics
-    </h2>
-
-    <p>
-      This portfolio showcases the projects, lessons learned, and practical experience I'm building as I transition into Clinical Informatics and Healthcare IT. Every project is an opportunity to strengthen my technical skills while applying them to real-world healthcare challenges.
-    </p>
-
-    <h3>Current Focus</h3>
-
-    <div class="skills">
-      {skills.map((skill) => (
-        <span class="skill">{skill}</span>
-      ))}
+<Layout
+  title="Gerson Valladares | Bones to Bytes"
+  description="Gerson Valladares — Orthopaedic Surgery, Healthcare IT, and Linux."
+>
+  <section class="hero" aria-labelledby="intro-title">
+    <div class="hero-content">
+      <h1 id="intro-title">Gerson Valladares</h1>
+      <p class="hero-tagline">
+        <span>Orthopaedic Surgery</span>
+        <span class="separator" aria-hidden="true">·</span>
+        <span>Healthcare IT</span>
+        <span class="separator" aria-hidden="true">·</span>
+        <span>Linux</span>
+      </p>
     </div>
-
-  </div>
-
-</section>
-
+  </section>
 </Layout>
