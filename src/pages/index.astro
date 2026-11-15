@@ -5,9 +5,10 @@ import Layout from "../layouts/Layout.astro";
 <Layout
   title="Gerson Valladares | Bones to Bytes"
   description="Gerson Valladares — Orthopaedic Surgery, Healthcare IT, and Linux."
+  homepage
 >
-  <section class="hero" aria-labelledby="intro-title">
-    <div class="hero-content">
+  <section id="intro" class="panel hero" aria-labelledby="intro-title">
+    <div class="panel-content hero-content">
       <h1 id="intro-title">Gerson Valladares</h1>
       <p class="hero-tagline">
         <span>Orthopaedic Surgery</span>
@@ -17,5 +18,194 @@ import Layout from "../layouts/Layout.astro";
         <span>Linux</span>
       </p>
     </div>
+    <a class="scroll-cue" href="#projects">
+      <span>Scroll to explore</span>
+      <span aria-hidden="true">↓</span>
+    </a>
+  </section>
+
+  <section id="projects" class="panel panel-projects" aria-labelledby="projects-title">
+    <div class="panel-content">
+      <p class="section-label">01 / Projects</p>
+      <h2 id="projects-title">Healthcare, data<br />&amp; technology.</h2>
+      <p class="section-description">
+        Building practical skills in SQL and healthcare data analysis,
+        with interests in Linux, infrastructure, and automation.
+      </p>
+      <a class="panel-link" href="/projects/">Explore projects <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section id="journey" class="panel panel-journey" aria-labelledby="journey-title">
+    <div class="panel-content">
+      <p class="section-label">02 / Journey</p>
+      <h2 id="journey-title">Learning along<br />the way.</h2>
+      <p class="section-description">
+        Notes on my transition into Clinical Informatics and Healthcare IT,
+        with room for personal experiences, reflections, and life beyond work.
+      </p>
+      <a class="panel-link" href="/journal/">Read the journey <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section id="about" class="panel panel-about" aria-labelledby="about-title">
+    <div class="panel-content">
+      <p class="section-label">03 / About</p>
+      <h2 id="about-title">From bones<br />to bytes.</h2>
+      <p class="section-description">
+        I'm Gerson, a former orthopaedic trauma surgeon connecting clinical
+        experience with healthcare data, information systems, and technology.
+      </p>
+      <a class="panel-link" href="/about/">More about me <span aria-hidden="true">→</span></a>
+      <a class="back-to-top" href="#intro">Back to top ↑</a>
+    </div>
   </section>
 </Layout>
+
+<style>
+  :global(html.homepage) {
+    scroll-snap-type: y proximity;
+  }
+
+  :global(.homepage header) {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    border-bottom: 0;
+    backdrop-filter: none;
+  }
+
+  :global(.homepage main) {
+    max-width: none;
+    padding: 0;
+  }
+
+  .panel {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+    padding: 8rem 1.5rem;
+    text-align: center;
+    scroll-snap-align: start;
+    background: #081220;
+  }
+
+  .hero {
+    background: radial-gradient(ellipse at 50% 100%, #102b42, #081220 65%);
+  }
+
+  .panel-projects {
+    background: #0c1a2a;
+  }
+
+  .panel-journey {
+    background: #112336;
+  }
+
+  .panel-about {
+    background: #172d42;
+  }
+
+  .panel-content {
+    width: 100%;
+    max-width: 48rem;
+  }
+
+  .section-label {
+    margin: 0 0 1.5rem;
+    color: var(--accent);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.03em;
+    text-wrap: balance;
+  }
+
+  .section-description {
+    max-width: 30rem;
+    margin: 1.5rem auto 2rem;
+    color: var(--muted);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.8;
+  }
+
+  .panel-link {
+    display: inline-block;
+    padding: .5rem;
+    font-weight: 600;
+  }
+
+  .panel-link span {
+    display: inline-block;
+    margin-left: .35rem;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    padding: .5rem;
+    color: var(--muted);
+    font-size: .7rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .scroll-cue span:last-child {
+    color: var(--accent);
+    font-size: 1.25rem;
+  }
+
+  .back-to-top {
+    display: block;
+    width: fit-content;
+    margin: 3rem auto 0;
+    padding: .5rem;
+    color: var(--muted);
+    font-size: .85rem;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 5px;
+    border-radius: 2px;
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .panel:not(.hero) .panel-content {
+        animation: enter-panel linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 100%;
+      }
+    }
+  }
+
+  @keyframes enter-panel {
+    from { opacity: .3; transform: translateY(1.5rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(html.homepage) {
+      scroll-behavior: auto;
+      scroll-snap-type: none;
+    }
+  }
+</style>

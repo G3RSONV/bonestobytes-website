@@ -4,11 +4,13 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  homepage?: boolean;
 }
 
 const {
   title,
   description = "Bones to Bytes - Healthcare • Data • Technology",
+  homepage = false,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -16,7 +18,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class={homepage ? "homepage" : undefined}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -41,21 +43,21 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
         <div class="nav-links">
 
           <a
-            href={`${basePath}/projects/`}
+            href={homepage ? "#projects" : `${basePath}/projects/`}
             class={currentPath.startsWith(`${basePath}/projects`) ? "active" : ""}
           >
             Projects
           </a>
 
           <a
-            href={`${basePath}/journal/`}
+            href={homepage ? "#journey" : `${basePath}/journal/`}
             class={currentPath.startsWith(`${basePath}/journal`) ? "active" : ""}
           >
             Journey
           </a>
           
           <a
-          href={`${basePath}/about/`}
+          href={homepage ? "#about" : `${basePath}/about/`}
           class={currentPath.startsWith(`${basePath}/about`) ? "active" : ""}
         >
           About
