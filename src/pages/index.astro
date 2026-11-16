@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ContactLinks from "../components/ContactLinks.astro";
 ---
 
 <Layout
@@ -68,11 +69,7 @@ import Layout from "../layouts/Layout.astro";
         Healthcare, technology, or a shared interest in Linux.
         I'd be glad to connect.
       </p>
-      <div class="contact-links">
-        <a class="panel-link" href="https://www.linkedin.com/in/fracturefixed/">LinkedIn</a>
-        <a class="panel-link" href="https://github.com/G3RSONV">GitHub</a>
-        <a class="panel-link" href="mailto:g3rsonv@proton.me">Email</a>
-      </div>
+      <ContactLinks />
       <a class="back-to-top" href="#intro">Back to top ↑</a>
     </div>
   </section>
@@ -156,13 +153,6 @@ import Layout from "../layouts/Layout.astro";
     display: inline-block;
     padding: .5rem;
     font-weight: 600;
-  }
-
-  .contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: .75rem 1.5rem;
   }
 
   .panel-link span {

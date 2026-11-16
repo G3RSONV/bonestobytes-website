@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import SiteMenu from "../components/SiteMenu.astro";
 
 interface Props {
   title: string;
@@ -13,8 +14,6 @@ const {
   homepage = false,
 } = Astro.props;
 
-const currentPath = Astro.url.pathname;
-const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -33,41 +32,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   <body>
 
-    {!homepage && (
-    <header>
-      <nav aria-label="Main navigation">
-
-        <a class="nav-brand" href={`${basePath}/`}>
-          Bones to Bytes
-        </a>
-
-        <div class="nav-links">
-
-          <a
-            href={`${basePath}/projects/`}
-            class={currentPath.startsWith(`${basePath}/projects`) ? "active" : ""}
-          >
-            Projects
-          </a>
-
-          <a
-            href={`${basePath}/journal/`}
-            class={currentPath.startsWith(`${basePath}/journal`) ? "active" : ""}
-          >
-            Journey
-          </a>
-          
-          <a
-          href={`${basePath}/about/`}
-          class={currentPath.startsWith(`${basePath}/about`) ? "active" : ""}
-        >
-          About
-        </a>
-        </div>
-
-      </nav>
-    </header>
-    )}
+    <SiteMenu />
 
     <main>
       <slot />
